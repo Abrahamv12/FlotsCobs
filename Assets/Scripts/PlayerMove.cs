@@ -11,6 +11,10 @@ public class PlayerMove : MonoBehaviour
     public float TiempoEnemigo;
     private float NuevoEnemigo;
 
+    public GameObject Cartucho;
+    public GameObject BalaPrefabs;
+    public float VelBala;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +41,17 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey("a"))
         {
             rb.velocity = -transform.right * 5;
+        }
+
+        if(Input.GetButtonDown("Fire1"))
+        {
+            GameObject TempBala = Instantiate(BalaPrefabs, Cartucho.transform.position, Cartucho.transform.rotation);
+
+            Rigidbody TempoRb = TempBala.GetComponent<Rigidbody>();
+
+            TempoRb.AddForce(transform.up * VelBala);
+
+            Destroy(TempBala, 5.0f);
         }
     }
 }
