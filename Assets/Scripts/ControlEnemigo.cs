@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ControlEnemigo : MonoBehaviour
 {
@@ -25,5 +26,13 @@ public class ControlEnemigo : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.gameObject.name); 
+    if (collision.gameObject.name == "Player" || collision.gameObject.name == "Base")
+        {
+            ResetScene();
+        }
+    }
+    void ResetScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
