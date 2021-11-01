@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class PlayerMove : MonoBehaviour
@@ -17,6 +18,13 @@ public class PlayerMove : MonoBehaviour
     public GameObject BalaPrefabs;
     public float VelBala;
 
+    public float enemies = 10;
+    public int vida = 10;
+
+    public int score;
+    public Text TXTscore;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,21 +34,23 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        TXTscore.text = "Score:" + score;
+
        if(NuevoEnemigo <= 0) {
           NuevoEnemigo = TiempoEnemigo;
             int EnemigoPost = Random.Range(-2, 3);
           GameObject EnemigoTemp= Instantiate(Enemigo,new Vector3(EnemigoPost,6,0),Quaternion.identity);
-            Destroy(EnemigoTemp, 5);
+            Destroy(EnemigoTemp, 4);
         }
 
         NuevoEnemigo -= Time.deltaTime;
 
-        if(Input.GetKey("d"))
+        if(Input.GetKey("a"))
         {
             rb.velocity = transform.right * 5;
         }
 
-        if (Input.GetKey("a"))
+        if (Input.GetKey("d"))
         {
             rb.velocity = -transform.right * 5;
         }
@@ -54,6 +64,15 @@ public class PlayerMove : MonoBehaviour
             TempoRb.AddForce(transform.up * VelBala);
 
             Destroy(TempBala, 5.0f);
+        }
+
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Bala")
+        {
+            score++;
         }
     }
 }

@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Inicio.unity
     guid: 59c0635216ccdb54abfd107529c13e61
+  - enabled: 1
+    path: Assets/Scenes/Ganar.unity
+    guid: b9cbd195688a9ba43aac7e78c798eb7c
   m_configObjects: {}
