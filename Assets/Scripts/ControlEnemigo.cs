@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class ControlEnemigo : MonoBehaviour
 {
 
+    public PlayerMove playerScript; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,7 @@ public class ControlEnemigo : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
+        playerScript.score++;
         Debug.Log(other.gameObject.name);
         Destroy(this.gameObject);
     }
@@ -32,11 +34,10 @@ public class ControlEnemigo : MonoBehaviour
         { 
             PlayerMove scriptVida = collision.gameObject.GetComponent<PlayerMove>();
             scriptVida.vida -= 1;
-         
             Destroy(gameObject);
             if (scriptVida.vida <= 0) SceneManager.LoadScene("Final");
         }
-
+     
     }
     void SceneFinal()
     {

@@ -23,7 +23,6 @@ public class PlayerMove : MonoBehaviour
 
     public int score;
     public Text TXTscore;
-    
 
     // Start is called before the first frame update
     void Start()
@@ -36,10 +35,11 @@ public class PlayerMove : MonoBehaviour
     {
         TXTscore.text = "Score:" + score;
 
-       if(NuevoEnemigo <= 0) {
+        if (NuevoEnemigo <= 0) {
           NuevoEnemigo = TiempoEnemigo;
             int EnemigoPost = Random.Range(-2, 3);
           GameObject EnemigoTemp= Instantiate(Enemigo,new Vector3(EnemigoPost,6,0),Quaternion.identity);
+            EnemigoTemp.transform.GetComponent<ControlEnemigo>().playerScript = this;
             Destroy(EnemigoTemp, 4);
         }
 
@@ -70,9 +70,9 @@ public class PlayerMove : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Bala")
+        if (collision.gameObject.tag == "Enemigo")
         {
-            score++;
+          
         }
     }
 }

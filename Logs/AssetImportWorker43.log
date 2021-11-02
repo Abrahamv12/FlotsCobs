@@ -9,19 +9,25 @@ C:\Program Files\Unity\Hub\Editor\2020.3.19f1\Editor\Unity.exe
 -batchMode
 -noUpm
 -name
-AssetImportWorker7
+AssetImportWorker43
 -projectPath
 C:/Users/acer/OneDrive/Documentos/GitHub/FlotsCobs
 -logFile
-Logs/AssetImportWorker7.log
+Logs/AssetImportWorker43.log
 -srvPort
-49990
+61751
 Successfully changed project path to: C:/Users/acer/OneDrive/Documentos/GitHub/FlotsCobs
 C:/Users/acer/OneDrive/Documentos/GitHub/FlotsCobs
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 5812.26 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 244.42 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.19f1 (68f137dc9bbe)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.19f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/acer/OneDrive/Documentos/GitHub/FlotsCobs/Assets
 GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: AMD Radeon HD 7310 Graphics (ID=0x9809)
+    Vendor:   
+    VRAM:     245 MB
+    Driver:   15.201.1151.0
